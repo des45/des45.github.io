@@ -6,10 +6,12 @@ type git > /dev/null || exec echo "missing dependences: git not found"
 [ -d $HOME/.dotfiles.git ] || \
 git clone --bare "https://github.com/des45/dotfiles.git" $HOME/.dotfiles.git
 
-alias dotfiles="git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
+dotfiles="git --git-dir=$HOME/.dotfiles.git --work-tree=$HOME"
 
-dotfiles checkout > /dev/null || exec echo "checkout failed"
+$dotfiles checkout > /dev/null || exec echo "checkout failed"
 
-dotfiles config --local status.showUntrackedFiles no
+$dotfiles config --local status.showUntrackedFiles no
+
+[ $SHELL = $(which zsh) ] && source $HOME/.zsh
 
 echo "dotfiles was successfully imported"
