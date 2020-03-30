@@ -1,2 +1,3 @@
-echo "Test is complite!"
-neofetch
+cd
+pwd
+mkdir TESTDIR
