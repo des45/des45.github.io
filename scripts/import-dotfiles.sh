@@ -12,6 +12,6 @@ $dotfiles checkout > /dev/null || exec echo "checkout failed"
 
 $dotfiles config --local status.showUntrackedFiles no
 
-[ $SHELL = $(which zsh) ] && source $HOME/.zsh
-
-echo "dotfiles was successfully imported"
+echo \
+"dotfiles was successfully imported! \
+Restart your shell to import it's config"
