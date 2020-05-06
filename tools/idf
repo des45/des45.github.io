@@ -1,3 +1,4 @@
+#!/usr/bin/sh
 type git > /dev/null || exec echo "missing dependences: git not found"
 
 [ -f $HOME/.gitignore ] || echo ".dotfiles.git" >> \
