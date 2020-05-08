@@ -1,0 +1,75 @@
+html {
+	box-sizing: border-box;
+}
+
+
+*, *::after, *::before {
+	box-sizing: inherit;
+}
+body {
+	border: 4px solid purple;
+	border-radius: 9px;
+	background-color: rgba(255,0,0,.3);
+	
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 1em;
+	margin: 10px;
+}
+h1 {
+	color: green; 
+	font-size: 2em;
+	font-family: Georgia, 'Times New Roman', Times, serif;
+	border-bottom: 10px dotted #375e97;
+}
+
+
+h2 {
+	font-size: 1.5em;
+	font-style: italic;
+}
+
+.job-title {
+	color: #999999;
+	font-weight: bold;
+}
+
+input[type=button] {
+	width:200px;
+	height:50px;
+	border: 5px none;
+	background-color: lime;
+}
+
+input[type=button]:hover {
+	background-color: limegreen;
+}
+input[type=button]:active {
+	background-color: green;
+}
+
+input[type=button]:focus {
+	outline: 3px solid pink;
+}
+
+a:link,
+a:visited {
+	color: #fb6542;
+}
+
+a:hover {
+	text-decoration: none;
+	color: green;
+}
+
+ul {
+	background-color: #eee;
+	border: 5px solid purple;
+	border-top-right-radius: 70px 50px;
+	padding: 10px 30px;
+}
+
+p {
+	margin: 6px 30px;
+	padding: 1px 40px;
+	width: 50%;
+}
