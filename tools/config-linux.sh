@@ -5,12 +5,12 @@ apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-util
 )
 type git > /dev/null || exec echo "missing dependences: git not found"
 
-[ -d $HOME/.cfg ] || \
-git clone --bare "https://github.com/ashuya/dotfiles" $HOME/.cfg
+[ -d "$HOME"/.cfg ] || \
+git clone --bare "https://github.com/ashuya/dotfiles" "$HOME"/.cfg
 
 config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
-$config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} |
+$config checkout 2>&1 | grep -E "\s+\." | awk {'print $1'} |
     xargs -I{} rm {} -rf
 $config checkout
 
@@ -20,11 +20,11 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 omf install bobthefish
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir -p $HOME/.local/share/fonts
-mkdir -p $HOME/.config/fontconfig/conf.d
-mv PowerlineSymbols.otf $HOME/.local/share/fonts
-mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
-fc-cache -vf $HOME/.local/share/fonts/
+mkdir -p "$HOME"/.local/share/fonts
+mkdir -p "$HOME"/.config/fontconfig/conf.d
+mv PowerlineSymbols.otf "$HOME"/.local/share/fonts
+mv 10-powerline-symbols.conf "$HOME"/.config/fontconfig/conf.d
+fc-cache -vf "$HOME"/.local/share/fonts/
 
 
 echo \
