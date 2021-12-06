@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 type apt-get > /dev/null && (
 apt update; sudo apt-get upgrade
-apt install --upgrade neovim vim git fish tmux python3 
+apt install --upgrade neovim vim git fish tmux python3 curl
 )
 type git > /dev/null || exec echo "missing dependences: git not found"
 
@@ -15,6 +15,9 @@ $config checkout 2>&1 | egrep "\s+\." | awk {'print $1'} |
 $config checkout
 
 $config config --local status.showUntrackedFiles no
+
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
+omf install bobthefish
 
 echo \
 "everything set up \
