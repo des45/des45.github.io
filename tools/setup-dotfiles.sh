@@ -20,10 +20,11 @@ curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install 
 omf install bobthefish
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
 wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
-mkdir -p ~/.local/share/fonts
-mkdir -p ~/.config/fontconfig/conf.d
-mv PowerlineSymbols.otf ~/.local/share/fonts
-mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d
+mkdir -p $HOME/.local/share/fonts
+mkdir -p $HOME/.config/fontconfig/conf.d
+mv PowerlineSymbols.otf $HOME/.local/share/fonts
+mv 10-powerline-symbols.conf $HOME/.config/fontconfig/conf.d
+fc-cache -vf $HOME/.local/share/fonts/
 
 
 echo \
