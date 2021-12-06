@@ -6,7 +6,7 @@ apt install --upgrade neovim vim git fish tmux python3
 type git > /dev/null || exec echo "missing dependences: git not found"
 
 [ -d $HOME/.cfg ] || \
-git clone --bare "git@github.com:ashuya/dotfiles.git" $HOME/.cfg
+git clone --bare "https://github.com/ashuya/dotfiles" $HOME/.cfg
 
 config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
