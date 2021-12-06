@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 type apt-get > /dev/null && (
-apt update; sudo apt-get upgrade
+apt update; apt upgrade
 apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-utils
 )
 type git > /dev/null || exec echo "missing dependences: git not found"
