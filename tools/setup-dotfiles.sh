@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 type apt-get > /dev/null && (
 apt update; sudo apt-get upgrade
-apt install --upgrade neovim vim git fish tmux python3 curl
+apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-utils
 )
 type git > /dev/null || exec echo "missing dependences: git not found"
 
@@ -18,6 +18,13 @@ $config config --local status.showUntrackedFiles no
 
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 omf install bobthefish
+wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+mkdir -p ~/.local/share/fonts
+mkdir -p ~/.config/fontconfig/conf.d
+mv PowerlineSymbols.otf ~/.local/share/fonts
+mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d
+
 
 echo \
 "everything set up \
