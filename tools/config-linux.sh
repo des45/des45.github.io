@@ -10,7 +10,7 @@ git clone --bare "https://github.com/ashuya/dotfiles" "$HOME"/.cfg
 
 config="git --git-dir=$HOME/.cfg --work-tree=$HOME"
 
-$config checkout 2>&1 | grep -E "\s+\." | awk {'print $1'} |
+$config checkout 2>&1 | grep -E "\s+\." | awk '{print $1}' |
     xargs -I{} rm {} -rf
 $config checkout
 
