@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 type apt-get > /dev/null && (
 apt update; apt upgrade
 apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-utils
