@@ -1,9 +1,11 @@
 #!/usr/bin/env sh
 type apt-get > /dev/null && (
 apt update; apt upgrade
-apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-utils
+apt install --upgrade neovim vim git fish tmux python3 curl wget fontconfig-utils tldr
 )
 type git > /dev/null || exec echo "missing dependences: git not found"
+
+tldr --update
 
 [ -d "$HOME"/.cfg ] || \
 git clone --bare "https://github.com/ashuya/dotfiles" "$HOME"/.cfg
